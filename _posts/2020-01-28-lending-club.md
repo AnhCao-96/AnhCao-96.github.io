@@ -7,7 +7,7 @@ header:
 excerpt: "Statistics, Linear Regression, Personal Loan"
 ---
 
-# Introduction:
+# INTRODUCTION
 
 This is a group project in my Data Analytics I class. Through this project, our group was able to understand what factors determine the interest rate that borrowers pay.
 
@@ -18,30 +18,56 @@ The regression models were run in either SAS Studio or SPSS.
 
 You can find the full project description and the data set [here](https://github.com/AnhCao-96/Lending-Club-Project)
 
-# Data Processing and Findings:
+# DATA PROCESSING AND FINDINGS
 
 This post will include the outputs for Part 3 to predict the interest rate and the loan amount for Louise Card.
 
-## Interest Rate Prediction
+## INTEREST RATE PREDICTION
 
-### Model 1:
+### MODEL 1
 
 In this model, we included all the variables that have values available to us: loan amount, annual income, revolving balance, newterm (a dummy variable for 36 month or 60 month term), loan grade (A,B,C,D,E,F), and ownership (OWN, MORTGAGE, RENT). Since all the information available was important, we would like to utilize all the information we had from Louise to get the closest interest rate estimate.
 
-o	Loan amount makes a theoretical sense that high-principal loans many have higher rates than lower loan amounts.
+*	Loan amount makes a theoretical sense that high-principal loans many have higher rates than lower loan amounts.
+*	Annual income may be a factor to consider the borrower’s ability to pay back the loan.
+*	A high revolving balance may cause a chance for a default.
+*	Loan grade is important since there is a higher chance for a default for a higher perceived risk loan.
+*	Ownership means that if the borrower has at least an outstanding mortgage, the loan would result in additional monthly fixed payment.
 
-o	Annual income may be a factor to consider the borrower’s ability to pay back the loan.
+<img src="{{ site.url }}{{ site.baseurl }}/images/lending-club/Interest Rate Model 1.png" alt="">
 
-o	A high revolving balance may cause a chance for a default.
-
-o	Loan grade is important since there is a higher chance for a default for a higher perceived risk loan.
-
-o	Ownership means that if the borrower has at least an outstanding mortgage, the loan would result in additional monthly fixed payment.
-
-image: "/images/lending-club/Interest Rate Model 1/png"
-
-### Model 2:
+### MODEL 2
 
 In the second model, to make it more general, we would like to include another variable dti (debt to income ratio) which was considered critical to estimate the loan interest rate. This variable is to show how much of a person's monthly gross income is for debt payments. The higher the ratio is, the less spare cash left, which could be a risk as there could be a chance for a default.
 
-image: "/images/lending-club/IR Model 2.png"
+<img src="{{ site.url }}{{ site.baseurl }}/images/lending-club/IR Model 2.png" alt="">
+
+**INTERPRETATION**:
+
+* None of the independent variables are highly correlated to one another.
+* Holding everything else constant, an increase of $1 in loan amount decreases the interest rate by 2.85E-06%.
+* Holding everything else constant, a 1 unit increase in dti results in a 0.004% increase in interest rate.
+* Annual income does not have a significant relationship with interest rate, but we included it in the model because it would make intuitive sense for it to affect interest rate, so including it tells a more complete story.
+* The TermDummy variable means that when going from a 36 month[0] loan to a 60 month[1], the interest rate increases by .17%.
+* For loan grade, we used Grade A as my base group, so as compared to Grade A, the interest rate is increased by 4%, 7.9%, 12.5%, 18.2%, 22.2% for Grade B,C,D,E,F respectively.
+* We used RENT as my base group for my ownership dummy variable, so compared to renting, owning a home increases the interest rate by 0.001% and having a mortgage decreases the interest rate by 0.081%.
+
+## LOAN AMOUNT PREDICTION
+
+### MODEL 1
+
+In the data set, loan amount refers to the particular dollar amount loan customers applied for. However, we would like to use this information as the maximum amount a customer may be eligible for. Therefore, based on the model, we were able to determine how much loan Louise could get approved for.
+
+<img src="{{ site.url }}{{ site.baseurl }}/images/lending-club/LM Model 1.png" alt="">
+
+We first included the interest rate variable in the model. However, when we ran the collinearity diagnosis (VIF), we found that interest rate and loan grade were every highly correlated. Therefore, we decided to exclude the interest rate.
+
+In addition to the loan grade variable, We did include other variables while running the analysis in order to take out the effect of those variables on loan amount. In fact, all the variables explained up to 97% of the variability.
+
+Keep everything constant, treating Grade B as the baseline group:
+
+* The loan amount for Grade A would be increased by approximately $747
+* The loan amount for Grade C would be decreased by approximately $1056
+* The loan amount for Grade D would be decreased by approximately $2447
+* The loan amount for Grade E would be decreased by approximately $4213
+* The loan amount for Grade F would be decreased by approximately $5961
