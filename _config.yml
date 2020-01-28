@@ -127,13 +127,13 @@ author:
       # url: "https://facebook.com/"
     - label: "GitHub"
       icon: "fab fa-fw fa-github"
-      url: "AnhCao-96"
+      url: "https://github.com/AnhCao-96"
     - label: "Instagram"
       icon: "fab fa-fw fa-instagram"
       # url: "https://instagram.com/"
     - linkedin: "LinkedIn"
       icon: "fab fa-fw fa-linkedin"
-      url: "anh-cao"
+      url: "https://www.linkedin.com/in/anh-cao/"
 
 # Site Footer
 footer:
@@ -146,7 +146,7 @@ footer:
       # url:
     - label: "GitHub"
       icon: "fab fa-fw fa-github"
-      url: "AnhCao-96"
+      url: "https://github.com/AnhCao-96"
     - label: "GitLab"
       icon: "fab fa-fw fa-gitlab"
       # url:
@@ -158,7 +158,7 @@ footer:
       # url:
     - linkedin: "LinkedIn"
       icon: "fab fa-fw fa-linkedin"
-      url: "anh-cao"
+      url: "https://www.linkedin.com/in/anh-cao/"
 
 
 # Reading Files
