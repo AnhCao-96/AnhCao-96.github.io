@@ -3,7 +3,7 @@ title: "Regression Analysis Project: The Lending Club"
 date: 2020-01-28
 tags: [statistics, SAS/SPSS, linear regression, interactions]
 header:
-  image: "/images/about.jpg"
+  image: "/images/lending-club/lendingclub.png"
 excerpt: "Statistics, Linear Regression, Personal Loan"
 ---
 
