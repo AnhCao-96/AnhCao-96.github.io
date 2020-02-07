@@ -1,7 +1,7 @@
 ---
 title: "Regression Analysis Project: The Lending Club"
 date: 2020-01-28
-tags: [statistics, SAS/SPSS, regression, interactions]
+tags: [statistics, SAS/SPSS, linear regression, interactions]
 header:
   image: "/images/about.jpg"
 excerpt: "Statistics, Linear Regression, Personal Loan"
@@ -31,19 +31,19 @@ Louise Card became the director of alumni relations with College of Business. Sh
 
 In this model, we included all the variables that have values available to us: loan amount, annual income, revolving balance, newterm (a dummy variable for 36 month or 60 month term), loan grade (A,B,C,D,E,F), and ownership (OWN, MORTGAGE, RENT). Since all the information available was important, we would like to utilize all the information we had from Louise to get the closest interest rate estimate.
 
+![alt]({{ site.url }}{{ site.baseurl }}/images/lending-club/Interest Rate Model 1.PNG)
+
 *	Loan amount makes a theoretical sense that high-principal loans many have higher rates than lower loan amounts.
 *	Annual income may be a factor to consider the borrower’s ability to pay back the loan.
 *	A high revolving balance may cause a chance for a default.
 *	Loan grade is important since there is a higher chance for a default for a higher perceived risk loan.
 *	Ownership means that if the borrower has at least an outstanding mortgage, the loan would result in additional monthly fixed payment.
 
-![alt]({{ site.url }}{{ site.baseurl }}/images/lending-club/Interest Rate Model 1.png)
-
 ### MODEL 2
 
 In the second model, to make it more general, we would like to include another variable dti (debt to income ratio) which was considered critical to estimate the loan interest rate. This variable is to show how much of a person's monthly gross income is for debt payments. The higher the ratio is, the less spare cash left, which could be a risk as there could be a chance for a default.
 
-![alt]({{ site.url }}{{ site.baseurl }}/images/lending-club/IR Model 2.png)
+![alt]({{ site.url }}{{ site.baseurl }}/images/lending-club/IR Model 2.PNG)
 
 **INTERPRETATION:**
 
@@ -61,11 +61,11 @@ In the second model, to make it more general, we would like to include another v
 
 In the data set, loan amount refers to the particular dollar amount loan customers applied for. However, we would like to use this information as the maximum amount a customer may be eligible for. Therefore, based on the model, we were able to determine how much loan Louise could get approved for.
 
-![alt]({{ site.url }}{{ site.baseurl }}/images/lending-club/LM Model 1.png)
-
 We first included the interest rate variable in the model. However, when we ran the collinearity diagnosis (VIF), we found that interest rate and loan grade were every highly correlated. Therefore, we decided to exclude the interest rate.
 
-In addition to the loan grade variable, We did include other variables while running the analysis in order to take out the effect of those variables on loan amount. In fact, all the variables explained up to 97% of the variability.
+In addition to the loan grade variable, we did include other variables while running the analysis in order to take out the effect of those variables on loan amount. In fact, all the variables explained up to 97% of the variability.
+
+![alt]({{ site.url }}{{ site.baseurl }}/images/lending-club/LM Model 1.PNG)
 
 * The loan grade is included to see how the loan grade would affect the max loan amount that Louise could apply for. The TermDummy shows how the term would affect the loan amount. Theoretically, a longer loan would include a higher risk.
 * When borrowers wanted to apply for a high loan amount, it may be used to pay for their outstanding balance of all accounts. Thus, the lender will need to consider if they have outstanding mortgages, credit balances (revolving balances), and installments.
@@ -84,7 +84,7 @@ Keep everything constant, treating Grade B as the baseline group:
 
 ### MODEL 2
 
-![alt]({{ site.url }}{{ site.baseurl }}/images/lending-club/LM Model 2.png)
+![alt]({{ site.url }}{{ site.baseurl }}/images/lending-club/LM Model 2.PNG)
 
 In this model, we included the interest rate variable instead of loan grade. In order to determine if Louise's loan amount would be higher if she pays more money in each installment at a higher interest rate, we need to include an interaction variable between installment and interest rate.
 
