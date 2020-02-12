@@ -9,5 +9,5 @@ I am a Graduate student pursuing a Business Analytics degree at the University o
 
 By the time I graduate from UofL in September 2020, I will have a decent knowledge of several high in-demand programming languages (Python, R, SQL...) for analytics, data mining and visualization (Tableau, Power BI...), storytelling with data, correlation and regression analysis, ect. With those skill sets under my belt, I hope to pursue an Analyst career where I can provide data-driven insights, managerial strategies, and clear communication to make practical and concrete decision for a company.
 
-Honored to serve as the first student current student for the newsletter to prospective students at UofL.
-![alt]({{ site.url }}{{ site.baseurl }}/images/EPL/newsletter.PNG)
+Honored to serve as the first current student for the newsletter to prospective students at UofL.
+![alt]({{ site.url }}{{ site.baseurl }}/images/newsletter.PNG)
