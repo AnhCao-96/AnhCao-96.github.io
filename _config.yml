@@ -132,7 +132,7 @@ author:
       icon: "fab fa-fw fa-instagram"
       # url: "https://instagram.com/"
     - linkedin: "LinkedIn"
-      icon: "fab fa-fw fa-linkedin"
+      icon: "fas fa-fw fa-linkedin"
       url: "https://linkedin.com/in/anh-cao/"
 
 # Site Footer
