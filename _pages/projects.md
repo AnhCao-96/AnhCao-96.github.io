@@ -1,6 +1,6 @@
 ---
 layout: archive
-permalink: /projects/
+permalink: /data wrangling projects/
 title: "Posts by Tags"
 author_profile: true
 header:

@@ -109,7 +109,7 @@ analytics:
 author:
   name             : "Anh Cao"
   avatar           : "/images/profile.jpg" # path of avatar image, e.g. "/assets/images/bio-photo.jpg"
-  bio              : "Data Analysis Portfolio"
+  bio              : "Data Analytics Portfolio"
   location         : "Louisville, KY"
   email            :
   links:
@@ -132,7 +132,7 @@ author:
       icon: "fab fa-fw fa-instagram"
       # url: "https://instagram.com/"
     - linkedin: "LinkedIn"
-      icon: "fas fa-fw fa-linkedin"
+      icon: "fab fa-fw fa-linkedin-square"
       url: "https://linkedin.com/in/anh-cao/"
 
 # Site Footer

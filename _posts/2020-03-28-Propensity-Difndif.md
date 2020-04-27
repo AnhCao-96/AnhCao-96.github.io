@@ -1,5 +1,5 @@
 ---
-title: "Regression Analysis Project: Lord’s Resistance Army - Uganda"
+title: "Statistics: Lord’s Resistance Army - Uganda"
 date: 2020-01-28
 tags: [Statistics, R Programing Language]
 header:
@@ -8,7 +8,7 @@ excerpt: "Statistics, R Programing, Propensity Score Matching, Difference in Dif
 ---
 # BACKGROUND
 
-The data are from Chirstopher Blattman and J Annan. 2010. “The consequences of child soldiering” Review of Economics and Statistics 92 (4):882-898
+The data are from Chirstopher Blattman and J Annan. 2010. “The consequences of child soldiering” *Review of Economics and Statistics* 92 (4):882-898
 
 The data are from a panel survey of male youth in war-afflicted regions of Uganda. The authors want to
 estimate the impact of forced military service on various outcomes. They focus on Uganda because there
@@ -29,11 +29,12 @@ thirds of abductees were forced to perpetrate a crime or violence. A third event
 fifth were forced to murder soldiers, civilians, or even family members in order to bind them to the group,
 to reduce their fear of killing, and to discourage disobedience.
 
-You can find the full project description, dataset and the code [here](https://github.com/AnhCao-96/EPL-Standings)
-
 # ANALYSIS
 
-In this problem we will look at the effect of abduction on educ (years of education).
+In this problem we will look at the effect of abduction on educ (years of education).The abd variable is the
+treatment in this case. Note that educ, distress, and logwage are all outcomes/post-treatment variables.
+
+![alt]({{ site.url }}{{ site.baseurl }}/images/Lord's Resistance Army/table.PNG)
 
 When using linear regression model to calculate the **naive** average treatment effect (ATE) of abduction on education, the coefficient was -.60, meaning that if someone is abducted, he would have about 0.6 less years of education than those that are not abducted. Standard error of this estimate is 2.88.
 
@@ -61,7 +62,6 @@ histbackback(split(blattman$psvalue, blattman$abd), main="Propensity scores Befo
 ![alt]({{ site.url }}{{ site.baseurl }}/images/Lord's Resistance Army/b2b1.PNG)
 
 **Divide the data into 6 equally-sized strata**
-
 On average, each stratum (subset) will contain 124 observations.
 
 ```r
@@ -77,18 +77,15 @@ reg.group1<-lm(educ~abd + C_ach + C_akw + C_ata + C_kma + C_oro + C_pad + C_paj 
 ```
 Apply the same code for the rest of the strata.
 
-**Linear regression to calculate the overall average treatment effect**
+**Linear regression to calculate the overall ATE**
 ```r
 reg.1<-lm(educ~abd + C_ach + C_akw + C_ata + C_kma + C_oro + C_pad + C_paj + age + fthr_ed + mthr_ed + orphan96 + hh_fthr_frm + hh_size96,data=blattman)
 ```
 
 **Output Summary**
-
 ![alt]({{ site.url }}{{ site.baseurl }}/images/Lord's Resistance Army/summary.PNG)
 
 Overall, the ATE of being abducted was about 0.7 years of less education on average compared to those who were not abducted.
-
-### Use *a nearest neighbor match* over the whole data set to estimate the ATE
 
 **Distribution of propensity scores using a nearest neighbor match**
 ```r

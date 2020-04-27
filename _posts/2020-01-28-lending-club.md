@@ -1,5 +1,5 @@
 ---
-title: "Regression Analysis Project: The Lending Club"
+title: "Statistics: The Lending Club"
 date: 2020-01-28
 tags: [Statistics]
 header:
