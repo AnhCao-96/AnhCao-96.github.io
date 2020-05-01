@@ -71,8 +71,50 @@ By looking at the score rankings overlay plot, the Mean Predicted curves of both
 
 In order to choose the best model, it is always better and more clear to look at several metrics. Based on the Fit Statistics table, in terms of RMSE, the decision tree using Variance fitting method is better. It indicates the absolute fit of the model to the data, which is how close the observed data points are to the model's predicted values. The RMSE is lower therefore produces a better fit in the Variance model.
 
+# NEURAL NETWORK METHOD
+
+## DATA PROCESSING AND FINDINGS
+
+### THE FLOW DIAGRAM & DESCRIPTION
+
+![alt]({{ site.url }}{{ site.baseurl }}/images/Toyota/nndiagram.PNG)
+
+In the diagram, the File Import node was used to import the file into SAS as it was an excel file. The Data Partition node was assigned with a breakdown of 60% train, 30% validation, 10% test. Due to the fact that neural network is notorious in terms of its sensitivity to curse of dimensionality, the Variable Selection node was used to select the most important variables to the target Sales Price. Then four multilayer perceptron neural network models were run with different numbers of hidden layer units which were indicated by the number shown on each neural network node. Because of the problem of high dimensionality, the number of hidden units may have to increase, adding to the complexity of the initial model.
+
+**Variable Selection**
+
+![alt]({{ site.url }}{{ site.baseurl }}/images/Toyota/A6P2_Variable Selection.PNG)
+
+### NEURAL NETWORK ARCHITECTURE
+
+The architecture of all the neural network nodes were set as Multilayer Perceptron. Therefore, SAS Enterprise Mine automatically used the default settings for the Hidden Layer Combination and Activation Functions. Because of the continuous target, Identity was set for Target Layer Activation Function and Normal for Target Layer Error Function.
+
+Next, Root Mean Squared Error (RMSE) was used as a metric to indicate the best model.
+
+![alt]({{ site.url }}{{ site.baseurl }}/images/Toyota/rmseoutputtable.PNG)
+
+**Iteration Plot**
+
+![alt]({{ site.url }}{{ site.baseurl }}/images/Toyota/iterationplot.PNG)
+
+Based on the Valid RSME outputs from the Model Comparison Node (above), Neural Network 10 is the best model out of the 4 models. The best RMSE value (1269.4) falls at the iteration 45 in the Neural Network 10.
+
+**Mean Predicted**
+
+![alt]({{ site.url }}{{ site.baseurl }}/images/Toyota/meanpredicted10.PNG)
+
+By looking at the score rankings overlay plot, the Mean Predicted and Mean Target curves associated with the Validation date of the model Neural Network 10 are very close to each other, meaning that the differences of the predicted mean price and the target mean price are minor, thus this is a good model.
+
+In the Neural Network 10, there are 231 parameters!
+
+# OUTPUT COMPARISON BETWEEN DECISION TREE & NEURAL NETWORK MODELS
+
 **Validation Record Example**
 
 ![alt]({{ site.url }}{{ site.baseurl }}/images/Toyota/validrecord.PNG)
 
-With the same record, the two decision trees above give different predicted prices. Based on the decision tree in model 1, the predicted price for the specific car model was $14,903 while the decision tree in model 2 predicted higher price, which was $15,277. Therefore once again, the Variance model is concluded to be the better model for the company to predict the car price.
+With the same record, the two decision trees above give different predicted prices. Based on the decision tree in model 1, the predicted price for the specific car model was $14,903 while the decision tree in model 2 predicted higher price, which was $15,277. Therefore once again, the Variance model is concluded to be the better model.
+
+Regarding the Neural Network 10, for the same Validation record example above, the predicted car price is approximately $14,548.
+
+As a result, the Variance model is the best model for the company to use to predict the car price.
