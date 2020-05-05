@@ -39,7 +39,7 @@ Note: Decision Tree node was also used for variable selection step.
 
 **Variable Importance In Descending Order**
 
-![alt]({{ site.url }}{{ site.baseurl }}/images/Toyota/importantprobf.tif)
+![alt]({{ site.url }}{{ site.baseurl }}/images/Toyota/importantprobf.png)
 
 ### DECISION TREE USING VARIANCE (MODEL 2)
 
