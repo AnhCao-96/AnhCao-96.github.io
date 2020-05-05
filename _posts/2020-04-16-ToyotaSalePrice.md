@@ -25,15 +25,13 @@ You can find the full data set [here](https://github.com/AnhCao-96/Toyota)
 
 <img src="{{ site.url }}{{ site.baseurl }}/images/Toyota/flowdiagram.PNG" alt="">
 
-![alt]({{ site.url }}{{ site.baseurl }}/images/Toyota/flowdiagram.PNG)
-
 In the diagram, the File Import node was used to import the file into SAS as it was an excel file. The Data Partition node was assigned with a breakdown of 60% train, 30% validation, 10% test. Then two decision tree models were ran to compare the simplicity and the fit of the models. Since the Price target was a continuous variable, there were two different splitting methods offered in SAS EM such as F-statistics and Variance. At the same time, Average Squared Error (ASE) was chosen to be the assessment measure for both of the models. Thus, for the first decision tree, F-statistic for splitting and Average Squared Error (ASE) as the assessment measure, and for the second decision tree, we used Variance for splitting and ASE as the assessment measure. Finally, the Model Comparison was used to examine the two model and select the better one.
 
 Note: Decision Tree node was also used for variable selection step.
 
 ### DECISION TREE USING F-STATISTICS (MODEL 1)
 
-![alt]({{ site.url }}{{ site.baseurl }}/images/Toyota/probf.PNG)
+<img src="{{ site.url }}{{ site.baseurl }}/images/Toyota/probf.PNG" alt="">
 
 **Subtree Assessment Plot**
 
