@@ -1,9 +1,9 @@
 ---
-title: "Machine Learning: How Would The Sale Price of A Toyota Be Predicted?"
+title: "Machine Learning: Prediction of The Sale Price of A Toyota"
 date: 2020-04-17
 tags: [Machine Learning]
 header:
-  image: "/images/Toyota/toyotabrand.png"
+  image: "/images/Toyota/toyotabrand.jpg"
 excerpt: "Data Mining, SAS Enterprise Miner, Decision Tree, Neural Network, Toyota"
 ---
 
@@ -15,13 +15,15 @@ This data mining project is to predict the sale price of the Toyota Corolla bran
 
 The project was ran in the SAS Enterprise Miner software using two different methods such as Decision Tree and Neural Network to output the optimal predictive model that includes the most important variables for sale price prediction.
 
-You can find the full project description and the data set [here](https://github.com/AnhCao-96/Lending-Club-Project)
+You can find the full data set [here](https://github.com/AnhCao-96/Toyota)
 
 # DECISION TREE METHOD
 
 ## DATA PROCESSING AND FINDINGS
 
 ### THE FLOW DIAGRAM & DESCRIPTION
+
+<img src="{{ site.url }}{{ site.baseurl }}/images/Toyota/flowdiagram.PNG" alt="">
 
 ![alt]({{ site.url }}{{ site.baseurl }}/images/Toyota/flowdiagram.PNG)
 
@@ -115,6 +117,6 @@ In the Neural Network 10, there are 231 parameters!
 
 With the same record, the two decision trees above give different predicted prices. Based on the decision tree in model 1, the predicted price for the specific car model was $14,903 while the decision tree in model 2 predicted higher price, which was $15,277. Therefore once again, the Variance model is concluded to be the better model.
 
-Regarding the Neural Network 10, for the same Validation record example above, the predicted car price is approximately $14,548.
+Regarding the Neural Network 10, for the same Validation record example above, the predicted car price is approximately $14,548 (provided by SAS EM).
 
 As a result, the Variance model is the best model for the company to use to predict the car price.
